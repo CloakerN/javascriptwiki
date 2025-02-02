@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Documentação JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="image/logo-javascript.JPEG" type="image/JPEG">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <img src="image/javascriptlogo.JPEG" alt="Logotipo do JavaScript">
+            <h1>Documentações de JavaScript e Demos Interativas</h1>
+            <nav>
+                <ul>
+                    <li><a href="#variables">Variáveis</a></li>
+                    <li><a href="#functions">Funções</a></li>
+                    <li><a href="#dom-manipulation">Manipulação de DOM</a></li>
+                    <li><a href="#events">Eventos</a></li>
+                    <li><a href="#arrays">Arrays</a></li>
+                    <li><a href="#objects">Objetos</a></li>
+                    <li><a href="#promises">Promises</a></li>
+                    <li><a href="#keyboard-events">Eventos de Teclado</a></li>
+                    <li><a href="#style-manipulation">Manipulação de Estilo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="variables">
+            <h2>Variáveis em JavaScript</h2>
+            <p>Em JavaScript, você pode declarar variáveis de três maneiras diferentes:</p>
+            <ul>
+                <li><strong>var</strong>: uma forma mais antiga de declarar variáveis, que tem escopo global ou de função.</li>
+                <li><strong>let</strong>: permite declarar variáveis com escopo de bloco, sendo mais moderna e segura.</li>
+                <li><strong>const</strong>: usada para declarar constantes, que não podem ser reatribuídas.</li>
+            </ul>
+            <p>Clique no botão abaixo para ver um exemplo prático de como declarar variáveis:</p>
+            <div class="demo-box">
+                <button id="variableDemo">Ativar Demonstração de Variável</button>
+                <pre id="variableOutput"></pre>
+            </div>
+        </section>
+
+        <section id="functions">
+            <h2>Funções em JavaScript</h2>
+            <p>Funções são blocos de código que podem ser reutilizados. Elas podem receber entradas (parâmetros) e retornar um resultado. Veja como calcular a soma de dois números:</p>
+            <div class="demo-box">
+                <input type="number" id="num1" placeholder="Digite um número">
+                <input type="number" id="num2" placeholder="Digite outro número">
+                <button id="calculateSum">Calcular Soma</button>
+                <p id="sumResult"></p>
+            </div>
+            <p>Insira dois números e clique em "Calcular Soma" para ver o resultado.</p>
+        </section>
+
+        <section id="dom-manipulation">
+            <h2>Manipulação do DOM</h2>
+            <p>O DOM (Document Object Model) permite que você altere o conteúdo e a estrutura da página HTML dinamicamente. Experimente alterar o texto abaixo clicando no botão:</p>
+            <div class="demo-box">
+                <p id="changeMe">Clique no botão para alterar este texto.</p>
+                <button id="changeTextBtn">Alterar Texto</button>
+            </div>
+        </section>
+
+        <section id="events">
+            <h2>Eventos em JavaScript</h2>
+            <p>JavaScript pode responder a diversos eventos, como cliques e movimentos do mouse. Experimente mover o mouse sobre o quadro abaixo:</p>
+            <div class="demo-box">
+                <div id="eventBox" style="width: 200px; height: 100px; background-color: lightblue; text-align: center; line-height: 100px; margin-bottom: 10px;">Coloque o mouse em mim!</div>
+                <p id="eventOutput"></p>
+            </div>
+            <p>Observe como a página reage ao movimento do mouse .</p>
+        </section>
+
+        <section id="arrays">
+            <h2>Arrays em JavaScript</h2>
+            <p>Arrays são listas de valores. Aqui está como você pode criar e manipular um array:</p>
+            <pre><code>
+const frutas = ['maçã', 'banana', 'laranja'];
+console.log(frutas[1]); // Exibe 'banana'
+            </code></pre>
+        </section>
+
+        <section id="objects">
+            <h2>Objetos em JavaScript</h2>
+            <p>Objetos são coleções de pares chave-valor. Veja como criar um objeto:</p>
+            <pre><code>
+const pessoa = {
+    nome: 'João',
+    idade: 30,
+    profissao: 'Desenvolvedor'
+};
+console.log(pessoa.nome); // Exibe 'João'
+            </code></pre>
+        </section>
+
+        <section id="promises">
+            <h2>Promises em JavaScript</h2>
+            <p>Promises são usadas para lidar com operações assíncronas. Veja um exemplo:</p>
+            <pre><code>
+const minhaPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Operação concluída!');
+    }, 2000);
+});
+
+minhaPromise.then(res => console.log(res)); // Exibe 'Operação concluída!' após 2 segundos
+            </code></pre>
+        </section>
+
+        <section id="keyboard-events">
+            <h2>Eventos de Teclado</h2>
+            <p>Você pode capturar eventos de teclado usando o evento 'keydown'. Aqui está um exemplo:</p>
+            <div>
+                <input type="text" id="inputField" placeholder="Digite algo e pressione Enter">
+                <p id="keyOutput"></p>
+            </div>
+            <script>
+                const inputField = document.getElementById('inputField');
+                const keyOutput = document.getElementById('keyOutput');
+
+                inputField.addEventListener('keydown', function(event) {
+                    keyOutput.textContent = `Você pressionou: ${event.key}`;
+                });
+            </script>
+        </section>
+
+        <section id="style-manipulation">
+            <h2>Manipulação de Estilo Dinâmico</h2>
+            <p>Você pode mudar o estilo de elementos dinamicamente. Veja este exemplo:</p>
+            <div id="styleBox" style="width: 100px; height: 100px; background-color: blue;"></div>
+            <button id="changeColorBtn">Mudar Cor</button>
+            <script>
+                const changeColorBtn = document.getElementById('changeColorBtn');
+                const styleBox = document.getElementById('styleBox');
+
+                changeColorBtn.addEventListener('click', function() {
+                    styleBox.style.backgroundColor = styleBox.style.backgroundColor === 'blue' ? 'green' : 'blue';
+                });
+            </script>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Documentação JavaScript. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
