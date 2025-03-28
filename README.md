@@ -13,3 +13,5 @@ https://cloakern.github.io/javascriptwiki/
 ## 📝 License
 
 This project is under license. see here the license [LICENSE](LICENSE.md) for more details.
+
+Feito com https://www.markdownguide.org/basic-syntax/
